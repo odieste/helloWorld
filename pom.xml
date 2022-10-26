@@ -17,5 +17,48 @@
   </dependencies>
   <build>
     <finalName>HelloWorldWebApp</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+            <configuration>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+  </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        
+        <!-- Deploy the code in the server of choice -->
+        <!-- See also https://stackoverflow.com/questions/28071697/is-it-possible-to-pass-a-password-in-maven-deploy-in-the-command-line -->
+        <!-- See also https://stackoverflow.com/questions/41326911/maven-plugin-for-tomcat-9 -->
+
+
+
+     </plugins>
+    </pluginManagement>
   </build>
 </project>
